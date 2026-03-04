@@ -1,0 +1,557 @@
+:root {
+  --primary-green: #14934b;
+  --primary-pink: #ef5f76;
+  --dark-green: #045a58;
+  --light-bg: #f5faf7; /* For the donate section */
+  --text-dark: #333333;
+  --text-light: #666666;
+  --border-color: #e0e0e0;
+  --font-main: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+body {
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* --- Utilities & Typography --- */
+.text-pink {
+  color: var(--primary-pink);
+}
+.text-green {
+  color: var(--primary-green);
+}
+.section-subtitle {
+  color: var(--primary-pink);
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+/* Update the container to hide overflow */
+.img-placeholder { 
+    background-color: #e2e8f0; 
+    border-radius: 12px; 
+    width: 100%; 
+    overflow: hidden; 
+}
+
+/* Add this to force the image to fill the container perfectly */
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This crops the image nicely without stretching it */
+    display: block;
+    transition: transform 0.3s ease; /* Optional: smooth hover effect */
+}
+
+/* Optional: Add a slight zoom effect when hovering over cards */
+.program-card:hover .img-placeholder img {
+    transform: scale(1.05);
+}
+
+/* Buttons */
+.btn-solid-pink {
+  background: var(--primary-pink);
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+.btn-outline-green {
+  background: transparent;
+  color: var(--primary-green);
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--primary-green);
+  display: inline-block;
+  transition: all 0.3s;
+}
+.btn-outline-green:hover {
+  background: var(--primary-green);
+  color: white;
+}
+.full-width {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* --- Header --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+}
+.logo img {
+  height: 50px;
+}
+nav {
+  display: flex;
+  gap: 2rem;
+}
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  padding: 5rem 5% 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-size: 3rem;
+  color: var(--primary-green);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.hero p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.hero-img {
+  height: 400px;
+  border-radius: 20px;
+} /* The large boy image placeholder */
+
+/* --- Stats Section --- */
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 5%;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border-color);
+}
+.stat-item {
+  text-align: center;
+}
+.stat-item h3 {
+  color: var(--primary-green);
+  font-size: 2rem;
+}
+.stat-item p {
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.dot {
+  height: 6px;
+  width: 6px;
+  background-color: var(--primary-pink);
+  border-radius: 50%;
+}
+
+/* --- About Section --- */
+.about {
+  padding: 5rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* The complex image grid on the left */
+.about-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 250px 180px;
+  gap: 1rem;
+}
+.img-top {
+  grid-column: 1 / 3;
+}
+.year-box {
+  background: var(--primary-pink);
+  color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.year-box i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.year-box h2 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.year-box p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.about-text h2 {
+  color: var(--primary-green);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+.about-text p {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+.check-list {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+.check-list li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+.check-list i {
+  color: var(--primary-green);
+  font-size: 1.1rem;
+}
+
+/* --- Programs Section --- */
+.programs {
+  padding: 5rem 5%;
+  background-color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.programs-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+.programs-header h2 {
+  color: var(--primary-green);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.programs-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.program-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+.card-img {
+  height: 200px;
+  border-radius: 0;
+}
+.card-content {
+  padding: 2rem;
+}
+.icon-box {
+  color: var(--primary-green);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.pink-icon {
+  color: var(--primary-pink);
+}
+.card-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.card-content p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+.bullet-list {
+  list-style: none;
+}
+.bullet-list li {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.bullet-list li::before {
+  content: "•";
+  color: var(--primary-green);
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* --- Donate Section --- */
+.donate {
+  background-color: var(--light-bg);
+  padding: 5rem 5%;
+}
+.donate-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.donate-container h2 {
+  color: var(--primary-green);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.donate-container > p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.donate-form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+.form-group input[type="text"],
+.form-group input[type="email"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+}
+.radio-label {
+  font-weight: normal;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.amount-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.amount-pill {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.amount-pill.active {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+  background: #e8f4ed;
+  font-weight: 600;
+}
+.custom-amount {
+  flex-grow: 1;
+  min-width: 120px;
+}
+.checkbox-group label {
+  font-weight: normal;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--primary-green);
+  color: white;
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-img {
+  height: 40px;
+  filter: brightness(0) invert(1); /* Makes logo white */
+}
+.footer-text {
+  font-size: 0.85rem;
+  text-align: center;
+  flex: 1;
+}
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+.footer-socials a {
+  color: var(--primary-green);
+  background: white;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.footer-socials a:hover {
+  transform: translateY(-3px);
+}
+/* --- Animation Utilities --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for items in a row (like stats and cards) */
+.delay-1 {
+  transition-delay: 0.1s;
+}
+.delay-2 {
+  transition-delay: 0.3s;
+}
+.delay-3 {
+  transition-delay: 0.5s;
+}
+.delay-4 {
+  transition-delay: 0.7s;
+}
+
+/* --- Mobile Menu Button (Hidden on Desktop) --- */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--primary-green);
+  cursor: pointer;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-images {
+    grid-template-rows: 200px 150px;
+  }
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header & Mobile Nav */
+  header {
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  nav.active {
+    display: flex;
+  }
+  .btn-outline-green {
+    display: none;
+  } /* Hide header donate button on mobile to save space */
+
+  /* Typography & Spacing */
+  .hero {
+    padding: 3rem 5% 1rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .hero-img {
+    height: 250px;
+  }
+
+  /* Stats */
+  .stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .dot {
+    display: none;
+  }
+
+  /* Forms & Footers */
+  .donate-form {
+    padding: 1.5rem;
+  }
+  .amount-group {
+    flex-direction: column;
+  }
+  .radio-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
