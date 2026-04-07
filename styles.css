@@ -1058,6 +1058,9 @@ footer {
     grid-template-columns: 1fr;
     text-align: center;
   }
+  .footer-col p{
+    margin: 0 auto 0.8rem;
+  }
   .causes-gallery {
     justify-content: center;
   }
