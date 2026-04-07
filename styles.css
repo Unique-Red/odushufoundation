@@ -6,7 +6,7 @@
   --text-light: #666666;
   --bg-light: #fafafa;
   --border-color: #eaeaea;
-  --font-main: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-main: 'Teachers', system-ui, -apple-system, sans-serif;
 }
 
 body,
