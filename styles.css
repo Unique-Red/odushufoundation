@@ -1007,6 +1007,9 @@ footer {
   .modal-content {
     padding: 2rem 1.5rem;
   }
+  .mission-container{
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Responsive Media Queries */
